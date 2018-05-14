@@ -9,3 +9,22 @@ html {
 .intro-line.colored {
     background-color: #5acbc9;
 }
+h3.ui.header {
+    color: white;
+    background-color: #100096;
+    left: -35px;
+    padding: 5px 15px;
+    position: relative;
+    box-shadow: 3px 3px 8px rgba(0,0,0,.4);
+}
+h3.ui.header::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: 0px;
+    border-width: 5px 7px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #035c8a;
+    border-right-color: #035c8a;
+}
