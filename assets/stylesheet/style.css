@@ -1,3 +1,7 @@
+:root {
+  --common-color: #100096;
+  --second-color: var(--common-color);
+}
 html {
     font-family: 'Open Sans';
     color: #b6b6b6;
@@ -5,6 +9,7 @@ html {
 h3.ui.header {
     color: white;
     background-color: #100096;
+    background-color: var(--common-color);
     left: -30px;
     padding: 5px 15px;
     position: relative;
@@ -19,7 +24,9 @@ h3.ui.header::before {
     border-style: solid;
     border-color: transparent;
     border-top-color: #035c8a;
+    border-top-color: var(--second-color);
     border-right-color: #035c8a;
+    border-right-color: var(--second-color);
 }
 .ui.list.timeline-list .item {
     padding-left: 1.4em;
@@ -41,6 +48,7 @@ h3.ui.header::before {
     display: block;
     height: 100%;
     background-color: #100096;
+    background-color: var(--common-color);
     position: absolute;
     left: 0;
     top: 0;
