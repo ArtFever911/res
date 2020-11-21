@@ -1,0 +1,31 @@
+{
+  "name": "res",
+  "version": "1.0.0",
+  "description": "My very own personal website. Basically this is just a résumé",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack serve",
+    "start:node": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtFever911/res.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtFever911/res/issues"
+  },
+  "homepage": "https://github.com/ArtFever911/res#readme",
+  "devDependencies": {
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "puppeteer": "^2.0.0"
+  }
+}
