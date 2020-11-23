@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const config = require('config');
 
-const { HOST, PORT } = config;
+const { HOST, UI_PORT, NODE_PORT } = config;
 
 app.get('/health', function(req, res) {
     res.send('Serwer is up and running');
@@ -14,18 +14,18 @@ app.get('/pdf', async (req, res) => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     try {
-        await page.goto(`http://${HOST}:${PORT}`, {
+        await page.goto(`http://${HOST}:${UI_PORT}`, {
             waitUntil: "networkidle2"
         });
-        await page.setViewport({ width: 1680, height: 1050 });
+        await page.setViewport({ width: 794, height: 1123 });
         page.emulateMediaType('screen')
         const todays_date = new Date();
         const pdfURL = path.join(__dirname, 'files', todays_date.getTime() + '.pdf');
         
-        const pdf = await page.pdf({
+        const pdf = await page.pdf({ 
             path: pdfURL,
             format: "A4",
-            scale: 0.77,
+            scale: 0.7,
             printBackground: true,
             displayHeaderFooter: true,
         });
@@ -42,6 +42,6 @@ app.get('/pdf', async (req, res) => {
     }
 });
 
-app.listen(3000, ()=> {
-    console.log('Server started on port 3000')
+app.listen(NODE_PORT, ()=> {
+    console.log(`Server started on port ${NODE_PORT}`)
 });
